@@ -10,7 +10,7 @@ print(stack)
 #my solution to remove a item
 favs = []
 print("enter a food: ('q' to quit)")
-print("if you wanto to remove the last food, type 'pop'")
+print("if you want to remove the last food, type 'pop'")
 while True:
     data = input()
     if str.lower(data) == 'q':
@@ -37,3 +37,7 @@ while True:
     favs.append(data)
 for food in favs:
     print("you said:",food)
+
+#stack data structure
+#->first in last out - FILO
+#or -> last in first out LIFO
