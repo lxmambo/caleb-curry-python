@@ -3,6 +3,7 @@
 #A module is just a fancy name for a python file
 #By convention, they are often imported at the top of a file
 #but you can do it anywhere
+#if it's a folder it's called 'package'
 import math
 import pickle
 import queue
