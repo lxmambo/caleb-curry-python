@@ -30,8 +30,11 @@ class Book():
         if(self.title == book.title and self.pages == book.pages):
             return "books are equal"
         return "books are diferent"
+
+    def __hash__(self):
+        return hash(self.title) ^ hash(self.pages)
     
-    __hash__ = None #in this case our data structure is not hashed
+    #__hash__ = None #in this case our data structure is not hashed
     #this class is not suppposed to be used for hashing
     #we want to do this for mutable types, we shouldn't hash mutable data
     #the hash is derived from the data we are storing, so if we updata
@@ -46,5 +49,7 @@ book2 = Book("the digging-est Dog", 102)
 #it says unhashable type: 'Book'
 #everytime we put something in a set it gets hashed
 #strings and keys of dictionaries are hashable
-data = {"hell":book}
+#data = {"hell":book}
 #it ok because the value is not hashed, only the key
+
+print(hash(book))
