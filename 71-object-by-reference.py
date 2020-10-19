@@ -34,3 +34,16 @@ book2 = Book("are you my mother?",72)
 print(id(book))
 #id is unique between objects in existence
 #it uses the object memory address
+
+print(book == book2)
+print(id(book) == id(book2))
+print(book is book2)
+
+#function can change the content of objects
+def do_something(book):
+    print(id(book))
+    book.title = "something new"
+    print(id(book))
+
+do_something(book)
+print(book)
