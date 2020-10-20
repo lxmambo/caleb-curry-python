@@ -31,31 +31,21 @@ class Book():
 book = Book("are you my mother?",72)
 book2 = Book("are you my mother?",72)
 
-print(id(book))
-#id is unique between objects in existence
-#it uses the object memory address
+file = open("input.txt",'w') #w overwrites, a appends if the file exists
+file.write("are you my mother?\t72\n")
+file.write("humman bondage\t108")
+file.close()
+file = open('input.txt','r')
+#data = file.read()
+data = file.read().split('\n') #this way creates a list
+file.close()
+print(data)
 
-print(book == book2)
-print(id(book) == id(book2))
-print(book is book2)
-print("book2 before:",id(book2))
-
-#function can change the content of objects
-def do_something(book,book2):
-    print(id(book))
-    book.title = "something new"
-    book2 = Book("something new", 72)
-    print(id(book))
-
-do_something(book,book2)
-print("book2 after:",id(book2))
-print(book)
-print("book2: ",book2)
-
-def do_some_2(book):
-    print(id(book))
-    book = Book("something new 2", 1004)
-    print(id(book))
-
-do_some_2(book)
-print(book)
+book1_data = data[0].split('\t')
+print(len(data))
+print(len(book1_data))
+print(book1_data)
+book1 = Book(book1_data[0], book1_data[1])
+book2 = Book(data[1].split('\t')[0],data[1].split('\t')[1])
+print(book1)
+print(book2)
